@@ -55,7 +55,13 @@
 
         <activity
             android:name=".CMotionCardMenuActivity"
-            android:theme="@style/MenuTheme" />
+            android:theme="@style/MenuTheme"
+            android:label="@string/title_activity_cmotion_card_service" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
