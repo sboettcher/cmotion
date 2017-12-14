@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.properties.CompileSDKVersion
     buildToolsVersion project.properties.BuildToolsVersion
 
     defaultConfig {
@@ -34,12 +34,17 @@ dependencies {
     compile project(':wearforwarder')
     compile project(':cmotiontheta')
     compile project(':shared-ui')
-    compile 'com.android.support:appcompat-v7:25.+'
-    compile 'com.android.support:design:25+'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:design:27.0.2'
 
-    compile 'com.android.support:recyclerview-v7:25.+'
-    compile 'com.android.support:mediarouter-v7:25.+' // needed to shut up gradle version conflicts
-    androidTestCompile 'com.android.support:support-annotations:25.+'
+    compile 'com.android.support:recyclerview-v7:27.0.2'
+    compile 'com.android.support:mediarouter-v7:27.0.2' // needed to shut up gradle version conflicts
+    androidTestCompile 'com.android.support:support-annotations:27.0.2'
     compile 'com.sothree.slidinguppanel:library:3.3.1'
-    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:multidex:1.0.2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+    distributionType 'all'
 }

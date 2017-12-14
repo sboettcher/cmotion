@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.properties.CompileSDKVersion
     buildToolsVersion project.properties.BuildToolsVersion
 
     defaultConfig {
@@ -26,4 +26,9 @@ dependencies {
     androidTestCompile 'junit:junit:4+'
     androidTestCompile 'com.android.support.test:runner:0.4+'
     androidTestCompile 'com.android.support.test:rules:0.4+'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+    distributionType 'all'
 }
